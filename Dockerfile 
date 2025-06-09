@@ -1,0 +1,21 @@
+# ─────────────────────────────────────────────
+# SHERAFY'S PAYLOAD STACK - NO BULLSHIT VERSION
+# ─────────────────────────────────────────────
+
+# Start with a Node base image
+FROM node:18-slim
+
+# Set working directory inside container
+WORKDIR /app
+
+# Copy project files
+COPY . .
+
+# Install deps without bloated logs
+RUN yarn install --frozen-lockfile
+
+# Expose the port used by Payload (Next.js)
+EXPOSE 3000
+
+# Start the dev server
+CMD ["yarn", "dev"]
