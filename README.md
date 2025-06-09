@@ -28,8 +28,8 @@ You want a CMS or headless backend? Done. You want to customize it and deploy so
 ### 1. Clone the Repo
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/sharafi-payload-stack.git
-cd sharafi-payload-stack
+git clone https://github.com/sherafyk/sherafy-payload-stack.git
+cd sherafy-payload-stack
 ```
 
 ### 2. Create Your Environment File
@@ -87,7 +87,7 @@ This is the last time you:
 * Wonder why Payload is compiling for 20 minutes
 * Lose another day trying to launch a CMS
 
-Sharafi's Payload Stack **ends that cycle**.
+Sherafy's Payload Stack **ends that cycle**.
 
 Use it. Fork it. Copy it. Never suffer again.
 
