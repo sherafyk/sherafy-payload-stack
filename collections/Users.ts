@@ -10,6 +10,7 @@ const Users: CollectionConfig = {
     {
       name: 'email',
       type: 'email',
+      unique: true,
       required: true,
     },
     {
