@@ -10,8 +10,8 @@ FROM node:18-slim
 WORKDIR /app
 
 # Install dependencies first for better caching
-COPY package.json ./
-RUN yarn install --non-interactive
+COPY package.json yarn.lock ./
+RUN yarn install --frozen-lockfile --non-interactive
 
 # Copy the rest of the project files
 COPY . .

@@ -19,6 +19,7 @@ You want a CMS or headless backend? Done. You want to customize it and deploy so
 ## Prerequisites
 
 * A VPS (any Linux distro with Docker & Docker Compose installed)
+* Node.js 18 and Yarn installed locally if you build without Docker
 * A working brain cell (optional, but helpful)
 
 ---
@@ -30,6 +31,7 @@ You want a CMS or headless backend? Done. You want to customize it and deploy so
 ```bash
 git clone https://github.com/sherafyk/sherafy-payload-stack.git
 cd sherafy-payload-stack
+yarn install
 ```
 
 ### 2. Create Your Environment File
