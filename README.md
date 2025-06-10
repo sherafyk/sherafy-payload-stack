@@ -69,6 +69,30 @@ Or whatever IP/domain you're using.
 
 ---
 
+## Using the GHCR Image
+
+GitHub Actions builds this repo's Docker image and publishes it to
+GitHub Container Registry (GHCR). If you just want to deploy without building
+anything on your server, log in and pull the image:
+
+```bash
+# authenticate to GHCR (use a PAT if your registry is private)
+echo $CR_PAT | docker login ghcr.io -u <github-username> --password-stdin
+
+# pull the latest build
+docker pull ghcr.io/<OWNER>/<REPO>:latest
+
+# run it on any port you like
+docker run -d -p 2501:3000 \
+  -e PAYLOAD_SECRET=... \
+  -e MONGODB_URI=... \
+  ghcr.io/<OWNER>/<REPO>:latest
+```
+
+Replace the environment variables with the same values you use in `.env`.
+
+---
+
 ## Structure
 
 * `Dockerfile`: Builds Payload CMS container
