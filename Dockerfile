@@ -25,9 +25,15 @@ ENV PORT=$PORT \
 # Install dependencies first for better caching
 COPY package.json yarn.lock ./
 # Use npm registry and retry up to 3 times to avoid transient registry errors
-RUN for i in 1 2 3; do \
-    yarn install --non-interactive --registry=https://registry.npmjs.org && break || sleep 10; \
-    done && yarn cache clean
+RUN set -e; \
+    for i in 1 2 3; do \
+        yarn install --non-interactive --registry=https://registry.npmjs.org && break || { \
+            echo "yarn install failed, retrying ($i/3)..."; \
+            if [ "$i" -eq 3 ]; then exit 1; fi; \
+            sleep 10; \
+        }; \
+    done; \
+    yarn cache clean
 ENV NODE_ENV=production
 ENV NODE_OPTIONS="--import tsx"
 
