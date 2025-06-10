@@ -32,7 +32,16 @@ git clone https://github.com/sherafyk/sherafy-payload-stack.git
 cd sherafy-payload-stack
 ```
 
-### 2. Create Your Environment File
+### 2. Install Dependencies (optional)
+
+Run the provided setup script if your environment doesn't already have
+the required packages:
+
+```bash
+./setup.sh
+```
+
+### 3. Create Your Environment File
 
 ```bash
 cp .env.example .env
@@ -40,7 +49,7 @@ cp .env.example .env
 
 Edit `.env` to change the admin email, password, or app name if you want.
 
-### 3. Launch the Stack
+### 4. Launch the Stack
 
 ```bash
 docker compose up -d
