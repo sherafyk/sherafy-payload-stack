@@ -12,18 +12,18 @@
   "author": "Sherafgan Khan",
   "license": "MIT",
   "dependencies": {
-    "@payloadcms/bundler-webpack": "^2.0.0",
-    "@payloadcms/db-mongodb": "^2.0.0",
-    "@payloadcms/plugin-cloud-storage": "^2.0.0",
+    "@payloadcms/bundler-webpack": "^1.0.9",
+    "@payloadcms/db-mongodb": "^3.42.0",
+    "@payloadcms/plugin-cloud-storage": "^3.42.0",
     "dotenv": "^16.3.1",
     "express": "^4.19.2",
     "mongoose": "^8.4.0",
-    "payload": "^2.0.0"
+    "payload": "^3.42.0"
   },
   "devDependencies": {
     "cross-env": "^7.0.3"
   },
   "engines": {
-    "node": ">=18"
+    "node": ">=20.9.0"
   }
 }
