@@ -10,10 +10,10 @@ FROM node:18-slim
 WORKDIR /app
 
 # Install dependencies first for better caching
-COPY package.json ./
+COPY package.json yarn.lock ./
+RUN yarn install --non-interactive --frozen-lockfile && yarn cache clean
 ENV NODE_ENV=production
-ENV NODE_OPTIONS="--loader tsx"
-RUN yarn install --production --non-interactive && yarn cache clean
+ENV NODE_OPTIONS="--import tsx"
 
 # Copy the rest of the project files
 COPY . .
