@@ -1,16 +1,14 @@
 import express from 'express';
 import payload from 'payload';
 import dotenv from 'dotenv';
-import payloadConfig from './payload.config.ts';
 
 dotenv.config();
+const payloadConfig = (await import('./payload.config.ts')).default;
 
 const app = express();
 
 const start = async () => {
   await payload.init({
-    secret: process.env.PAYLOAD_SECRET,
-    mongoURL: process.env.MONGODB_URI,
     express: app,
     config: payloadConfig,
   });

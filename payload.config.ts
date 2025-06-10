@@ -1,6 +1,6 @@
 import { buildConfig } from 'payload';
 import { slateEditor } from '@payloadcms/richtext-slate';
-import { webpackBundler } from '@payloadcms/bundler-webpack';
+import { mongooseAdapter } from '@payloadcms/db-mongodb';
 
 import Users from './collections/Users';
 import Media from './collections/Media';
@@ -10,7 +10,10 @@ import Categories from './collections/Categories';
 import Tags from './collections/Tags';
 
 export default buildConfig({
-  bundler: webpackBundler(),
+  secret: process.env.PAYLOAD_SECRET,
+  db: mongooseAdapter({
+    url: process.env.MONGODB_URI,
+  }),
   serverURL: process.env.SERVER_URL || 'http://localhost:3000',
   admin: {
     user: Users.slug,
