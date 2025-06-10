@@ -11,7 +11,8 @@ WORKDIR /app
 
 # Install dependencies first for better caching
 COPY package.json ./
-RUN yarn install --non-interactive
+ENV NODE_ENV=production
+RUN yarn install --production --non-interactive && yarn cache clean
 
 # Copy the rest of the project files
 COPY . .
