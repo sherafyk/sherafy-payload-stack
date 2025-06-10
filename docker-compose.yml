@@ -11,9 +11,12 @@ services:
       - "27018:27017"
 
   payload:
-    build:
-      context: .
-      dockerfile: Dockerfile
+    # Use the prebuilt image from GHCR in production.
+    image: ghcr.io/<OWNER>/<REPO>:latest
+    # Uncomment the lines below to build locally instead.
+    # build:
+    #   context: .
+    #   dockerfile: Dockerfile
     container_name: payload-app
     restart: unless-stopped
     env_file:

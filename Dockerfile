@@ -9,6 +9,19 @@ FROM node:18-slim
 # Set working directory inside container
 WORKDIR /app
 
+# Allow secrets to be injected at build time
+ARG PORT=3000
+ARG PAYLOAD_SECRET
+ARG MONGODB_URI
+ARG ADMIN_EMAIL
+ARG ADMIN_PASSWORD
+
+ENV PORT=$PORT \
+    PAYLOAD_SECRET=$PAYLOAD_SECRET \
+    MONGODB_URI=$MONGODB_URI \
+    ADMIN_EMAIL=$ADMIN_EMAIL \
+    ADMIN_PASSWORD=$ADMIN_PASSWORD
+
 # Install dependencies first for better caching
 COPY package.json yarn.lock ./
 RUN yarn install --non-interactive && yarn cache clean
