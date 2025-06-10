@@ -46,6 +46,9 @@ Edit `.env` to change the admin email, password, or app name if you want.
 docker compose up -d
 ```
 
+MongoDB now exposes port `27018` on the host. If you need to connect to the
+database directly (e.g. using a GUI), use `mongodb://localhost:27018`.
+
 Done.
 Visit:
 

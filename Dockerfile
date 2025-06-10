@@ -15,8 +15,11 @@ RUN yarn install --non-interactive
 # Copy the rest of the project files
 COPY . .
 
+# Build the production bundle
+RUN yarn build
+
 # Expose the port used by Payload (Next.js)
 EXPOSE 3000
 
-# Start the dev server
-CMD ["yarn", "dev"]
+# Start the app in production mode
+CMD ["yarn", "start"]
