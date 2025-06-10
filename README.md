@@ -84,7 +84,9 @@ yarn dev
 ```
 
 This starts Payload in development mode using the local MongoDB defined in your `.env` file.
-Use `yarn build && yarn start` when you're ready for production.
+Use `yarn build && yarn start` when you're ready for production. The `start`
+script automatically loads TypeScript via `tsx`, so no manual compilation is
+required.
 
 Once everything is running, visit:
 
