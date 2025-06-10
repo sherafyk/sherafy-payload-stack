@@ -1,18 +1,18 @@
 // Import buildConfig directly from the payload package. Recent versions no
 // longer expose `payload/config` as an export which caused build failures
 // during `docker compose` on production servers.
-import { buildConfig } from 'payload';
+const { buildConfig } = require("payload");
 // Default rich text editor; required to avoid build errors in Payload v3.42+
-import { slateEditor } from '@payloadcms/richtext-slate';
-import { webpackBundler } from '@payloadcms/bundler-webpack';
-import Users from './collections/Users';
-import Media from './collections/Media';
-import Pages from './collections/Pages';
-import Posts from './collections/Posts';
-import Categories from './collections/Categories';
-import Tags from './collections/Tags';
+const { slateEditor } = require('@payloadcms/richtext-slate');
+const { webpackBundler } = require('@payloadcms/bundler-webpack');
+const Users = require('./collections/Users').default;
+const Media = require('./collections/Media').default;
+const Pages = require('./collections/Pages').default;
+const Posts = require('./collections/Posts').default;
+const Categories = require('./collections/Categories').default;
+const Tags = require('./collections/Tags').default;
 
-export default buildConfig({
+module.exports = buildConfig({
   bundler: webpackBundler(),
   serverURL: process.env.SERVER_URL || 'http://localhost:3000',
   admin: {

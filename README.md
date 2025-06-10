@@ -65,7 +65,7 @@ Or whatever IP/domain you're using.
 * `Dockerfile`: Builds Payload CMS container
 * `docker-compose.yml`: Spins up both Payload and MongoDB
 * `.env`: All your dumb config variables
-* `payload.config.ts`: Your collections and CMS config go here
+* `payload.config.js`: Your collections and CMS config go here
 * `collections/`: Put your custom content models here
 
 ---
