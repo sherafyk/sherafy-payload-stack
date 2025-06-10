@@ -12,7 +12,7 @@ services:
 
   payload:
     # Use the prebuilt image from GHCR in production.
-    image: ghcr.io/<OWNER>/<REPO>:latest
+    image: ghcr.io/sherafyk/sherafy-payload-stack:latest
     # Uncomment the lines below to build locally instead.
     # build:
     #   context: .

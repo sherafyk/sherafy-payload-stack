@@ -2,7 +2,7 @@
   "name": "sherafy-payload-stack",
   "version": "1.0.0",
   "description": "Sherafy's Payload Stack - a no-bullshit stack that just fucking works.",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "dev": "cross-env NODE_ENV=development payload dev",
     "build": "payload build",
