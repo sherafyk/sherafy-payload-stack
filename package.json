@@ -13,7 +13,6 @@
   "license": "MIT",
   "type": "module",
   "dependencies": {
-    "@payloadcms/bundler-webpack": "^1.0.9",
     "@payloadcms/db-mongodb": "^3.42.0",
     "@payloadcms/plugin-cloud-storage": "^3.42.0",
     "@payloadcms/richtext-slate": "^3.42.0",
