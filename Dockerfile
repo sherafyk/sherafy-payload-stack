@@ -3,7 +3,8 @@
 # ─────────────────────────────────────────────
 
 # Start with a Node base image
-FROM node:20-slim
+# Use an LTS version of Node for better compatibility
+FROM node:18-slim
 
 # Set working directory inside container
 WORKDIR /app
