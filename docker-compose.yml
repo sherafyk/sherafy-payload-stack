@@ -7,7 +7,8 @@ services:
     volumes:
       - mongo-data:/data/db
     ports:
-      - "27017:27017"
+      # Map to 27018 on the host to avoid conflicts with local MongoDB
+      - "27018:27017"
 
   payload:
     build:
@@ -22,7 +23,7 @@ services:
     depends_on:
       - mongo
     environment:
-      NODE_ENV: development
+      NODE_ENV: production
 
 volumes:
   mongo-data:
