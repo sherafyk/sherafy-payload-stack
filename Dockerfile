@@ -11,7 +11,7 @@ WORKDIR /app
 
 # Install dependencies first for better caching
 COPY package.json yarn.lock ./
-RUN yarn install --non-interactive --frozen-lockfile && yarn cache clean
+RUN yarn install --non-interactive && yarn cache clean
 ENV NODE_ENV=production
 ENV NODE_OPTIONS="--import tsx"
 
