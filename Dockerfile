@@ -12,6 +12,7 @@ WORKDIR /app
 # Install dependencies first for better caching
 COPY package.json ./
 ENV NODE_ENV=production
+ENV NODE_OPTIONS="--loader tsx"
 RUN yarn install --production --non-interactive && yarn cache clean
 
 # Copy the rest of the project files
