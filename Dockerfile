@@ -18,8 +18,8 @@ ENV NODE_OPTIONS="--import tsx"
 # Copy the rest of the project files
 COPY . .
 
-# Build the production bundle
-RUN yarn build
+# Skip building; Payload v3 handles admin bundling on the fly
+# RUN yarn build
 
 # Expose the port used by Payload (Next.js)
 EXPOSE 3000
