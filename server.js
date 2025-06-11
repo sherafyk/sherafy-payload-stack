@@ -1,9 +1,7 @@
+import 'dotenv/config';
 import express from 'express';
 import payload from 'payload';
-import dotenv from 'dotenv';
-
-dotenv.config();
-const payloadConfig = (await import('./payload.config.ts')).default;
+import payloadConfig from './payload.config.ts';
 
 const app = express();
 
