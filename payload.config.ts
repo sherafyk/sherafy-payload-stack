@@ -1,5 +1,5 @@
 import { buildConfig } from 'payload';
-import { slateEditor } from '@payloadcms/richtext-slate';
+import { lexicalEditor } from '@payloadcms/richtext-lexical';
 import { mongooseAdapter } from '@payloadcms/db-mongodb';
 
 import Users from './collections/Users';
@@ -19,7 +19,7 @@ export default buildConfig({
     user: Users.slug,
   },
   // Configure the default rich text editor
-  editor: slateEditor({}),
+  editor: lexicalEditor(),
   collections: [
     Users,
     Media,
