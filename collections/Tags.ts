@@ -1,4 +1,4 @@
-import { CollectionConfig } from 'payload/types';
+import type { CollectionConfig } from 'payload/dist/collections/config/types';
 import { formatSlug } from '../utils/formatSlug';
 
 const Tags: CollectionConfig = {

@@ -1,4 +1,4 @@
-import { CollectionConfig } from 'payload/types';
+import type { CollectionConfig } from 'payload/dist/collections/config/types';
 
 const Users: CollectionConfig = {
   slug: 'users',
