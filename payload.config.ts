@@ -10,16 +10,6 @@ import Categories from './collections/Categories';
 import Tags from './collections/Tags';
 
 export default buildConfig({
-  secret: process.env.PAYLOAD_SECRET,
-  db: mongooseAdapter({
-    url: process.env.MONGODB_URI,
-  }),
-  serverURL: process.env.SERVER_URL || 'http://localhost:3000',
-  admin: {
-    user: Users.slug,
-  },
-  // Configure the default rich text editor
-  editor: lexicalEditor(),
   collections: [
     Users,
     Media,
@@ -28,4 +18,12 @@ export default buildConfig({
     Categories,
     Tags,
   ],
+  secret: process.env.PAYLOAD_SECRET || '',
+  db: mongooseAdapter({ url: process.env.MONGODB_URI || '' }),
+  serverURL: process.env.SERVER_URL || 'http://localhost:3000',
+  admin: {
+    user: Users.slug,
+  },
+  // Configure the default rich text editor
+  editor: lexicalEditor(),
 });
